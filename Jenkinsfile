@@ -14,7 +14,7 @@ pipeline {
             steps {
                 echo '🧪 Running tests...'
                 // For demo, pretend test passes
-                sh 'node test.js'
+                bat 'node test.js'
             }
         }
 
@@ -22,7 +22,7 @@ pipeline {
             steps {
                 echo '🚀 Deploying the project...'
                 // Just a demo deploy (you can expand later)
-                sh 'echo "Deployment complete"'
+                bat 'echo "Deployment complete"'
             }
         }
     }
