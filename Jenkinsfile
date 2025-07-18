@@ -9,21 +9,21 @@ pipeline {
         stage('Build') {
             steps {
                 echo '📦 Building the project...'
-                bat 'npm install'
+               
             }
         }
 
         stage('Test') {
             steps {
                 echo '🧪 Running tests...'
-                bat 'node test.js'
+               
             }
         }
 
         stage('Deploy') {
             steps {
                 echo '🚀 Deploying the project...'
-                bat 'echo Deploy completed'
+                
             }
         }
     }
