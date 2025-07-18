@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs 'node20'  // 👈 match the name you gave in Global Tool Configuration
+    }
+
     stages {
         stage('Build') {
             steps {
