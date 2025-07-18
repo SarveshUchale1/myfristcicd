@@ -5,7 +5,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo '📦 Building the project...'
-                // For Node.js example
                 bat 'npm install'
             }
         }
@@ -13,7 +12,6 @@ pipeline {
         stage('Test') {
             steps {
                 echo '🧪 Running tests...'
-                // For demo, pretend test passes
                 bat 'node test.js'
             }
         }
@@ -21,8 +19,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo '🚀 Deploying the project...'
-                // Just a demo deploy (you can expand later)
-                bat 'echo "Deployment complete"'
+                bat 'echo Deploy completed'
             }
         }
     }
