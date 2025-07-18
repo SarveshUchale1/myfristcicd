@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo '📦 Building the project...'
                 // For Node.js example
-                sh 'npm install'
+                bat 'npm install'
             }
         }
 
