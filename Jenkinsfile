@@ -1,35 +1,10 @@
-pipeline {
-    agent any
+const http = require('http');
 
-    stages {
-        stage('Build') {
-            steps {
-                echo '📦 Building the project...'
-                bat 'npm install'
-            }
-        }
+const server = http.createServer((req, res) => {
+  res.write('Hello from CI/CD demo!');
+  res.end();
+});
 
-        stage('Test') {
-            steps {
-                echo '🧪 Running tests...'
-                bat 'node test.js'
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo '🚀 Deploying the project...'
-                bat 'echo Deploy completed'
-            }
-        }
-    }
-
-    post {
-        success {
-            echo '✅ Pipeline completed successfully.'
-        }
-        failure {
-            echo '❌ Pipeline failed.'
-        }
-    }
-}
+server.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
