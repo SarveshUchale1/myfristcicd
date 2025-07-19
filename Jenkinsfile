@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo '📦 Installing dependencies...'
-                bat 'npm install'
+                bat 'npm install docker'
             }
         }
 
