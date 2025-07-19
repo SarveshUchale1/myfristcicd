@@ -1,10 +1,35 @@
-const http = require('http');
+pipeline {
+    agent any
 
-const server = http.createServer((req, res) => {
-  res.write('Hello from CI/CD demo!');
-  res.end();
-});
+    stages {
+        stage('Build') {
+            steps {
+                echo '📦 Installing dependencies...'
+                bat 'npm install'
+            }
+        }
 
-server.listen(3000, () => {
-  console.log('Server is running on port 3000');
-});
+        stage('Test') {
+            steps {
+                echo '🧪 Running tests...'
+                bat 'npm test'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo '🚀 Starting app...'
+                bat 'start /b node app.js'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo '✅ Build and deploy completed!'
+        }
+        failure {
+            echo '❌ Build failed!'
+        }
+    }
+}
