@@ -1,2 +1,1 @@
-// This is a fake test
-console.log("✅ Test passed!");
+console.log("✅ Test passed: Hello CI/CD!");
